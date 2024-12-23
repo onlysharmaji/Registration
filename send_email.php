@@ -1,17 +1,17 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
-    $fullname = $_POST['fullname'];
-    $mobile = $_POST['mobile'];
-    $email = $_POST['email'];
-    $interest = $_POST['interest'];
-    $skills = $_POST['skills'];
-    $experience = $_POST['experience'];
-    $dob = $_POST['dob'];
-    $qualification = $_POST['qualification'];
+    // Collect form data and sanitize inputs
+    $fullname = htmlspecialchars($_POST['fullname']);
+    $mobile = htmlspecialchars($_POST['mobile']);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $interest = htmlspecialchars($_POST['interest']);
+    $skills = htmlspecialchars($_POST['skills']);
+    $experience = htmlspecialchars($_POST['experience']);
+    $dob = htmlspecialchars($_POST['dob']);
+    $qualification = htmlspecialchars($_POST['qualification']);
 
     // Recipient email
-    $to = "ankitkumarsharma805@gmail.com"; // Change this to your email
+    $to = "ankitkumarsharma805@gmail.com"; 
     $subject = "New Registration Form Submission";
 
     // Construct the email body
