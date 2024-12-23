@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $qualification = $_POST['qualification'];
 
     // Recipient email
-    $to = "your-email@example.com"; // Change this to your email
+    $to = "ankitkumarsharma805@gmail.com"; // Change this to your email
     $subject = "New Registration Form Submission";
 
     // Construct the email body
